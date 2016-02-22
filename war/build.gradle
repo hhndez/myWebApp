@@ -1,0 +1,36 @@
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'war'
+
+
+group 'com'
+version '1.0-SNAPSHOT'
+
+
+//sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':ejb1')
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    compile 'javax:javaee-web-api:7.0'
+
+   // compile 'javax:javaee-web-api:6.0'
+    //This jar includes Servlet 3.0, EJB Lite 3.1, JPA 2.0,
+    // JSP 2.2, EL 1.2, JSTL 1.2, JSF 2.0, JTA 1.1, JSR-45, JSR-250.
+//    providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
+//    providedCompile 'javax.servlet.jsp:jsp-api:2.2'
+//    compile 'javax.el:javax.el-api:2.2.4'
+//    runtime 'javax.servlet:jstl:1.2'
+
+    //compile 'com.sun.faces:jsf-api:2.1.19'
+    //compile 'com.sun.faces:jsf-impl:2.1.19'
+    //compile 'com.sun.el:el-ri:1.0'
+    compile 'commons-validator:commons-validator:1.4.1'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile group: 'log4j', name: 'log4j', version: '1.2.15', ext:'jar'
+}
